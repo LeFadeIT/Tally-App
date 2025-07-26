@@ -8,7 +8,6 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  srcDir: "app/",
-  css: ['../assets/css/main.css'],
+  css: ["./app/assets/css/main.css"],
   modules: ['motion-v/nuxt', '@vueuse/nuxt'],
 })

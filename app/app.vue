@@ -1,9 +1,9 @@
 <template>
-  <InteractiveHoverButton />
+  <NuxtPage />
 </template>
 
 <script lang="ts" setup>
-import InteractiveHoverButton from "../components/InteractiveHoverButton.vue";
+
 </script>
 
 <style>
