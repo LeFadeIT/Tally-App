@@ -30,7 +30,7 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
+          stroke-width="3"
           stroke-linecap="round"
           stroke-linejoin="round"
           class="lucide lucide-arrow-right"
@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts" setup>
-import { cn } from "../lib/utils";
+import { cn } from "~/lib/utils";
 import { ref } from "vue";
 
 interface Props {
@@ -51,7 +51,7 @@ interface Props {
   class?: string;
 }
 const props = withDefaults(defineProps<Props>(), {
-  text: "Button",
+  text: "START NOW",
 });
 
 const buttonRef = ref<HTMLButtonElement>();
