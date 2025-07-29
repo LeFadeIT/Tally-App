@@ -16,28 +16,42 @@
       }"
           class="relative flex flex-col items-center justify-center gap-4 px-4"
       >
-        <div class="text-center text-3xl font-bold md:text-7xl dark:text-white flex relative z-10">
+        <div
+            class="text-center text-3xl font-bold md:text-7xl dark:text-white flex relative z-10 drop-shadow-xl/100">
           Welcome to Tally!
-        </div>
-
-        <div class="py-4 text-base font-extralight md:text-4xl dark:text-neutral-200 relative z-10">
-          Start your journey now!
         </div>
 
         <nuxt-link to="/trackerpage" class="relative z-10">
           <InteractiveHoverButton/>
         </nuxt-link>
 
-        <div class="mockup-scene">
-          <div class="mockup-tilt">
-            <SafariMockup
-                url="Tally.com"
-                src="https://www.slideegg.com/image/catalog/478523-dashboard-slide-template.png"
-            />
-          </div>
-        </div>
+        <Motion
+            as="div"
+            :initial="{ opacity: 0, y: 40, filter: 'blur(10px)' }"
+            :while-in-view="{
+        opacity: 1,
+        y: 0,
+        filter: 'blur(0px)',
+      }"
+            :transition="{
+        delay: 0.5,
+        duration: 0.8,
+        ease: 'easeInOut',
+      }"
+            class="relative flex flex-col items-center justify-center gap-4 px-4"
+        >
+            <div class="mockup-scene">
+              <div class="mockup-tilt">
+                <SafariMockup
+                    url="Tally.com"
+                    src="https://www.slideegg.com/image/catalog/478523-dashboard-slide-template.png"
+                />
+              </div>
+            </div>
+        </Motion>
 
       </Motion>
+
     </AuroraBackground>
   </NuxtLayout>
 </template>
@@ -59,6 +73,9 @@ import {Motion} from "motion-v";
   right: 0;
 }
 
+.hero-content{
+  box-shadow: 10px 5px 5px black; /* Abdunklung, 0.5 = 50% durchsichtig */
+}
 .mockup-tilt {
   transform: translate(-20%, -60%) rotateY(-25deg) rotateX(15deg) scale(0.7);
   transform-style: preserve-3d;
@@ -66,10 +83,6 @@ import {Motion} from "motion-v";
   opacity: 0.9;
   transition: transform 0.5s ease;
   animation: float 8s ease-in-out infinite;
-}
-
-.text-outline{
-  -webkit-text-stroke: 3px black;
 }
 
 @keyframes float {
